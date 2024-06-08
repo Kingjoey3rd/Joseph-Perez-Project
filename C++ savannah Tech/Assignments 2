@@ -1,0 +1,27 @@
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+#define PI 3.14159265
+
+int main()
+{
+    double AreaofCircle, circumference, Radius;
+    cout << "Value of Radius = ";
+    cin >> Radius;
+    
+    // Calculate circumference
+    circumference = 2 * PI * Radius;
+    
+    // Calculate area of circle using the radius
+    AreaofCircle = PI * Radius * Radius;
+    
+    cout.precision(4);
+    cout << fixed; // Ensure fixed-point notation
+    
+    cout << "Circle Equation!" << endl;
+    cout << "Circumference = " << circumference << endl;
+    cout << "Area of Circle = " << AreaofCircle << endl;
+
+    return 0;
+}

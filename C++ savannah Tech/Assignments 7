@@ -1,0 +1,27 @@
+#include <iostream>
+#include <cmath>
+
+using namespace std;
+
+int main() {
+    int i = 0, N, SUM = 0, NUMBER, EQUAL;
+    
+    cout << "How many numbers would you like to find the sum of using them to be squared: ";
+    cin >> N;
+    
+    while (i < N) {
+        cout << "Enter the number you like to be powered by 2: ";
+        cin >> NUMBER;
+
+        EQUAL = pow(NUMBER, 2);
+        cout << "The power of " << NUMBER << " is: " << EQUAL << endl;
+        
+        SUM += EQUAL;
+        i++;
+    }
+    
+    cout << "The total sum is: " << SUM << endl;
+    cout << "Thanks for using our calculator!!" << endl;
+    
+    return 0;
+}

@@ -1,0 +1,209 @@
+#include <iostream>
+#include <cmath>
+
+using namespace std;
+
+int main() {
+    int N, SUM = 0, EQUAL;
+    cout << "Which number do you want for the increment to go up to?" << endl;
+    cin >> N;
+
+    for (int i = 1; i <= N; i++) {
+        EQUAL = pow(i, 3);
+        SUM += EQUAL;
+    }
+
+    cout << "The overall sum for the number you have picked will be: " << SUM << endl;
+    return 0;
+}
+//---------------------------------------
+#include <iostream>
+
+using namespace std;
+
+int main() {
+    int Grades;
+    cout << "Please enter Grades in integer numeric format: " << endl;
+    cin >> Grades;
+
+    if (Grades == 100) {
+        cout << "Your grade is out of the park." << endl;
+    } else if (Grades >= 90) {
+        cout << "Your grade is A, you passed." << endl;
+    } else if (Grades >= 80) {
+        cout << "Your grade is B, Good Job." << endl;
+    } else if (Grades >= 70) {
+        cout << "Your grade is C, Good but you should study a little bit more." << endl;
+    } else if (Grades >= 60) {
+        cout << "Your grade is D, sorry you didn't pass you should study more." << endl;
+    } else if (Grades >= 0) {
+        cout << "Your grade is F, sorry you didn't pass you should study more." << endl;
+    } else {
+        cout << "Try a different number to see the grade you have." << endl;
+    }
+
+    return 0;
+}
+//------------------------------------------------------
+#include <iostream>
+
+using namespace std;
+
+int main() {
+    int Grades;
+    cout << "Please enter Grades in integer numeric format: " << endl;
+    cin >> Grades;
+
+    switch (Grades) {
+        case 100:
+            cout << "Your grade is out of the park." << endl;
+            break;
+        case 90:
+            cout << "Your grade is A, you passed." << endl;
+            break;
+        case 80:
+            cout << "Your grade is B, Good Job." << endl;
+            break;
+        case 70:
+            cout << "Your grade is C, Good but you should study a little bit more." << endl;
+            break;
+        case 60:
+            cout << "Your grade is D, sorry you didn't pass you should study more." << endl;
+            break;
+        case 50:
+            cout << "Your grade is F, sorry you didn't pass you should study more." << endl;
+            break;
+        default:
+            cout << "Try a different number to see the grade you have." << endl;
+            break;
+    }
+
+    return 0;
+}
+//--------------------------------------------------------
+#include <iostream>
+
+using namespace std;
+
+int add(int x, int y);
+int sub(int x, int y);
+int multiply(int x, int y);
+void divide(int x, int y);
+
+int main() {
+    int x, y;
+    cout << "Pick any number that you want to be for X: " << endl;
+    cin >> x;
+    cout << "Pick any number that you want to be for Y: " << endl;
+    cin >> y;
+
+    cout << add(x, y) << endl;
+    cout << sub(x, y) << endl;
+    cout << multiply(x, y) << endl;
+    divide(x, y);
+
+    return 0;
+}
+
+int add(int num1, int num2) {
+    cout << "The answer is going to be ADDING: " << endl;
+    return num1 + num2;
+}
+
+int sub(int num1, int num2) {
+    cout << "The answer is going to be SUBTRACTING: " << endl;
+    return num1 - num2;
+}
+
+int multiply(int num1, int num2) {
+    cout << "The answer is going to be MULTIPLYING: " << endl;
+    return num1 * num2;
+}
+
+void divide(int num1, int num2) {
+    if (num2 != 0) {
+        cout << "The answer is going to be DIVIDING: " << endl;
+        cout << num1 / num2 << endl;
+    } else {
+        cout << "TRY AGAIN, division by zero is not allowed" << endl;
+    }
+}
+//---------------------------------------
+#include <iostream>
+
+using namespace std;
+
+int add(int x, int y);
+int sub(int x, int y);
+int multiply(int x, int y);
+void divide(int x, int y);
+
+int main() {
+    int x, y;
+    cout << "Pick any number that you want to be for X: " << endl;
+    cin >> x;
+    cout << "Pick any number that you want to be for Y: " << endl;
+    cin >> y;
+
+    cout << add(x, y) << endl;
+    cout << sub(x, y) << endl;
+    cout << multiply(x, y) << endl;
+    divide(x, y);
+
+    return 0;
+}
+
+int add(int num1, int num2) {
+    cout << "The answer is going to be ADDING: " << endl;
+    return num1 + num2;
+}
+
+int sub(int num1, int num2) {
+    cout << "The answer is going to be SUBTRACTING: " << endl;
+    return num1 - num2;
+}
+
+int multiply(int num1, int num2) {
+    cout << "The answer is going to be MULTIPLYING: " << endl;
+    return num1 * num2;
+}
+
+void divide(int num1, int num2) {
+    if (num2 != 0) {
+        cout << "The answer is going to be DIVIDING: " << endl;
+        cout << num1 / num2 << endl;
+    } else {
+        cout << "TRY AGAIN, division by zero is not allowed" << endl;
+    }
+}
+//----------------------------------------------------------------------
+#include <iostream>
+
+using namespace std;
+
+void writeHelloWorld(int row, int col);
+
+int main() {
+    int row, col;
+    cout << "Pick any number of rows: ";
+    cin >> row;
+    cout << "Pick any number of columns: ";
+    cin >> col;
+    
+    writeHelloWorld(row, col);
+
+    return 0;
+}
+
+void writeHelloWorld(int row, int col) {
+    if (row != 0 && col != 0) {
+        for (int x = 0; x < row; ++x) {
+            for (int h = 0; h < col; ++h) {
+                cout << "Hello world !! ";
+            }
+            cout << '\n';
+        }
+    } else {
+        cout << "NO HELLO WORLD AT THE MOMENT" << endl;
+    }
+}

@@ -1,0 +1,74 @@
+#include <iostream>
+#include <cmath>
+
+using namespace std;
+
+#define AO 4.828
+
+int main() {
+    float Length_of_One_Side, Area_of_Octagon;
+    cout << "ENTER THE Length of One Side: " << endl;
+    cin >> Length_of_One_Side;
+
+    Area_of_Octagon = pow(Length_of_One_Side, 2) * AO;
+    
+    cout.setf(ios::showpoint | ios::fixed);
+    cout.precision(3);
+    
+    cout << endl;
+    cout << "Intro of OCTAGON!" << endl << endl;
+    cout << "Length of One Side is " << Length_of_One_Side << endl;
+    cout << "Area of the OCTAGON = " << Area_of_Octagon << endl;
+
+    return 0;
+}
+//_______________________________________________________________
+#include <iostream>
+
+using namespace std;
+
+int main() {
+    int A, B, Sum, Difference, Product, Quotient, Remainder;
+    A = 40;
+    B = 6;
+
+    Sum = A + B;
+    Difference = A - B;
+    Product = A * B;
+    Quotient = A / B;
+    Remainder = A % B;
+
+    cout << "40 + 6 = " << Sum << endl;
+    cout << "40 - 6 = " << Difference << endl;
+    cout << "40 * 6 = " << Product << endl;
+    cout << "40 / 6 = " << Quotient << endl;
+    cout << "The Remainder of 40 / 6 is: " << Remainder << endl;
+
+    return 0;
+}
+//------------------------------------------------------
+#include <iostream>
+
+using namespace std;
+
+int main() {
+    int M, N, Adding, Subtraction, Multiply, Division, Remainder, Negate;
+    M = 34;
+    N = 6;
+
+    Adding = M + N;
+    Subtraction = M - N;
+    Multiply = M * N;
+    Division = M / N;
+    Remainder = M % N;
+    Negate = -N;
+
+    cout << "34 + 6 = " << Adding << endl;
+    cout << "34 - 6 = " << Subtraction << endl;
+    cout << "34 * 6 = " << Multiply << endl;
+    cout << "34 / 6 = " << Division << endl;
+    cout << "The Remainder of 34 / 6 is: " << Remainder << endl;
+    cout << "The Negate of N is: " << Negate << endl;
+
+    return 0;
+}

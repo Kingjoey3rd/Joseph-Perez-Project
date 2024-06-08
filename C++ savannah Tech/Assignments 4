@@ -1,0 +1,107 @@
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    bool Milk_is_Good;
+    cout<<"please enter the staus of Milk is good: In terms of logic level"<<endl;
+    cin>>Milk_is_Good;
+    if(Milk_is_Good==true)
+    {
+        Cout<<"creal"<<endl;
+    }
+    else
+    {
+        cout<<"Toast"<<endl;
+    }
+    return 0;
+}
+//----------------------------------------------------------------------
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    int A,B;
+    cout<<"Please use logic level and Please enter if today is Tuesday or Thurday."<<endl;
+    cin>>A;
+    cout<<"Please use logic level and Please enter if today is Monday or Wednesday."<endl;
+    cin>>B;
+
+    if(A>B){
+        cout<<"If today is Tuesday or Thurday, I have to go to C++ Class";
+    }
+    else if (A<B){
+        cout<<"If today is MOnday or Wednesday, I have to go to Digital 1 Class";
+
+    }
+    else{
+        cout<<"Going to take a Break";
+    
+    }
+    return 0;
+
+}
+//-----------------------------------------------------------------------
+#include <iostream>
+
+using namespace std;
+
+int main() {
+    int X;
+    cout << "Enter the value of X?" << endl;
+    cin >> X;
+
+    if (X > 0) {
+        cout << "If X is going to be Positive" << endl;
+
+        if (X >= 1 && X <= 10) {
+            cout << "If X is between 1 to 10" << endl;
+        } else {
+            cout << "X is out of range" << endl;
+        }
+    } else {
+        cout << "X is not positive" << endl;
+    }
+
+    return 0;
+}
+//-----------------------------------------------------------------------
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+int main() {
+    float Temperature;
+    string AC;
+    cout << "Enter the value of Temperature:" << endl;
+    cin >> Temperature;
+
+    cout << endl;
+
+    AC = (Temperature > 80) ? "ON" : "OFF";
+    cout << "AC is " << AC << endl;
+
+    return 0;
+}
+//-----------------------------------------------------------------------
+#include <iostream>
+
+using namespace std;
+
+int main() {
+    int Wind_Speed;
+    bool B_Hurricane;
+    cout << "Enter the value of Wind Speed?" << endl;
+    cin >> Wind_Speed;
+
+    cout << endl;
+
+    B_Hurricane = (Wind_Speed > 75) ? true : false;
+    cout << "Is it a hurricane? " << (B_Hurricane ? "Yes" : "No") << endl;
+
+    return 0;
+}

@@ -1,0 +1,101 @@
+#include <iostream>
+
+using namespace std;
+
+int main() {
+    int arr[5];
+    cout << "Please enter 5 integers: " << endl;
+    for (int x = 0; x < 5; ++x) {
+        cin >> arr[x];
+    }
+
+    cout << "Integers in the reverse order:\n";
+    for (int x = 4; x >= 0; --x) {
+        cout << arr[x] << endl;
+    }
+
+    return 0;
+}
+//------------------------------------
+#include <iostream>
+#include <cmath>
+
+using namespace std;
+
+int main() {
+    int N, SUM = 0, EQUAL;
+    cout << "Which number do you want for the increment to go up to?" << endl;
+    cin >> N;
+
+    for (int i = 1; i <= N; ++i) {
+        EQUAL = pow(i, 3);
+        SUM += EQUAL;
+    }
+
+    cout << "The overall sum for the number you have picked will be: " << SUM << endl;
+    return 0;
+}
+//-------------------------------------
+#include <iostream>
+#include <fstream>
+#include <string>
+
+using namespace std;
+
+int main() {
+    string FindResistor;
+    ifstream readfile("FindResistor.txt");
+
+    if (!readfile) {
+        cout << "Unable to open file";
+        return 1; // exit with error code
+    }
+
+    while (getline(readfile, FindResistor)) {
+        cout << FindResistor << endl;
+    }
+
+    readfile.close();
+    return 0;
+}
+#include <iostream>
+#include <cmath>
+
+using namespace std;
+
+#define PI 3.14159265
+
+class Sphere {
+public:
+    float RAD, VOL;
+
+    void findVol() {
+        VOL = (4.0 / 3) * PI * pow(RAD, 3);
+    }
+
+    void input() {
+        cout << "Please enter the radius of the sphere: " << endl;
+        cin >> RAD;
+    }
+
+    void display() {
+        cout.setf(ios::showpoint | ios::fixed);
+        cout.precision(3);
+        cout << "The Volume is: " << VOL << endl;
+    }
+};
+
+int main() {
+    Sphere SphereA, SphereB;
+    
+    SphereA.input();
+    SphereA.findVol();
+    SphereA.display();
+    
+    SphereB.input();
+    SphereB.findVol();
+    SphereB.display();
+
+    return 0;
+}
+//------------------------------------

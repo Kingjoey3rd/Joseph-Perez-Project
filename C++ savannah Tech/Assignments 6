@@ -1,0 +1,45 @@
+#include <iostream>
+#include <iomanip>
+
+using namespace std;
+
+int main() {
+    int lettercount;
+    lettercount = 0;
+
+    for (int i = 74; i < 75; ++i) {
+        cout << setw(6) << static_cast<char>(i);
+    }
+    for (int i = 79; i < 80; ++i) {
+        cout << setw(6) << static_cast<char>(i);
+    }
+    for (int i = 83; i < 84; ++i) {
+        cout << setw(6) << static_cast<char>(i);
+    }
+    for (int i = 69; i < 70; ++i) {
+        cout << setw(6) << static_cast<char>(i);
+    }
+    for (int i = 80; i < 81; ++i) {
+        cout << setw(6) << static_cast<char>(i);
+    }
+    for (int i = 72; i < 73; ++i) {
+        cout << setw(6) << static_cast<char>(i);
+    }
+
+    return 0;
+}
+//------------------------------------------------------
+#include <iostream>
+#include <iomanip>
+
+using namespace std;
+
+int main() {
+    for (int i = 13; i < 25; i++) {
+        if (i == 25) {
+            break;
+        }
+        cout << i << ", ";
+    }
+    return 0;
+}

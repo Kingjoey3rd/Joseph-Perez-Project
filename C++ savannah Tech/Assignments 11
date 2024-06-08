@@ -1,0 +1,43 @@
+#include <iostream>
+#include <cmath>
+
+using namespace std;
+
+class Resistors {
+public:
+    double ResistorA, ResistorB, Rt_B1, Rt_A1;
+
+    void input() {
+        cout << "Enter the Resistor1 value: ";
+        cin >> ResistorA;
+        cout << "Enter the Resistor2 value: ";
+        cin >> ResistorB;
+    }
+
+    void findSeries() {
+        Rt_A1 = ResistorA + ResistorB;
+    }
+
+    void findParallel() {
+        Rt_B1 = 1 / ((1 / ResistorA) + (1 / ResistorB));
+    }
+
+    void displayA() {
+        cout << "The total resistance for a series circuit is: " << Rt_A1 << " ohms" << endl;
+    }
+
+    void displayB() {
+        cout << "The total resistance for a parallel circuit is: " << Rt_B1 << " ohms" << endl;
+    }
+};
+
+int main() {
+    Resistors resistors1;
+    resistors1.input();
+    resistors1.findSeries();
+    resistors1.displayA();
+    resistors1.findParallel();
+    resistors1.displayB();
+
+    return 0;
+}

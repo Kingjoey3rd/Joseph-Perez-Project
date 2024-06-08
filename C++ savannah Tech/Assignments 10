@@ -1,0 +1,43 @@
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+// Function Prototypes
+void GRADES(string EXAMS[], float GRADES[]);
+float Avg(float GRADES[], float &SUM);
+
+// Function to input grades
+void GRADES(string EXAMS[], float GRADES[]) {
+    for(int i = 0; i < 4; ++i) {
+        cout << "Please input grade for " << EXAMS[i] << ": " << endl;
+        cin >> GRADES[i];
+    }
+}
+
+// Function to calculate average
+float Avg(float GRADES[], float &SUM) {
+    SUM = 0.0;
+    for(int i = 0; i < 4; ++i) {
+        SUM += GRADES[i];
+    }
+    return SUM / 4.0;
+}
+
+int main() {
+    float grade_score[4];
+    string EXAMS[4] = {"EXAM 1", "EXAM 2", "EXAM 3", "EXAM 4"};
+    float SUM, AVG;
+
+    // Get grades
+    GRADES(EXAMS, grade_score);
+    
+    // Calculate average
+    AVG = Avg(grade_score, SUM);
+
+    // Output sum and average
+    cout << "Total Sum: " << SUM << endl;
+    cout << "Average: " << AVG << endl;
+
+    return 0;
+}

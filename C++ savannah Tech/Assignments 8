@@ -1,0 +1,47 @@
+#include <iostream>
+
+using namespace std;
+
+// Function Prototypes
+int add(int x, int y);
+int sub(int x, int y);
+int multiply(int x, int y);
+int divide(int x, int y);
+
+int main() {
+    int x, y;
+    cout << "Pick any number that you want to be for X: " << endl;
+    cin >> x;
+    cout << "Pick any number that you want to be for Y: " << endl;
+    cin >> y;
+
+    // Call the functions in the main program
+    cout << "The answer for adding is: " << add(x, y) << endl;
+    cout << "The answer for subtracting is: " << sub(x, y) << endl;
+    cout << "The answer for multiplying is: " << multiply(x, y) << endl;
+    cout << "The answer for dividing is: " << divide(x, y) << endl;
+
+    return 0;
+}
+
+// Function definitions
+int add(int num1, int num2) {
+    return num1 + num2;
+}
+
+int sub(int num1, int num2) {
+    return num1 - num2;
+}
+
+int multiply(int num1, int num2) {
+    return num1 * num2;
+}
+
+int divide(int num1, int num2) {
+    if (num2 != 0) {
+        return num1 / num2;
+    } else {
+        cout << "Error: Division by zero is not allowed." << endl;
+        return 0;
+    }
+}

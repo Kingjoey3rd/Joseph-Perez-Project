@@ -1,0 +1,29 @@
+#include <iostream>
+#include <iomanip> // Include iomanip for better control of output formatting
+
+using namespace std;
+
+int main()
+{
+    double Ftemp, Ctemp, C;
+    
+    // Prompt the user to enter a temperature in Celsius
+    cout << "Please enter Celsius = ";
+    cin >> Ctemp;
+    
+    // Convert Celsius to Fahrenheit
+    Ftemp = Ctemp * 9.0 / 5.0 + 32.0;
+    
+    // Convert Fahrenheit back to Celsius
+    C = 5.0 / 9.0 * (Ftemp - 32.0);
+    
+    // Set output format to fixed-point notation with 2 decimal places
+    cout << fixed << setprecision(2);
+    
+    // Display the temperature conversions
+    cout << "Temperature Assignment" << endl;
+    cout << "For Temperature of " << Ctemp << " Celsius is " << Ftemp << " in Fahrenheit" << endl;
+    cout << "For Temperature of " << Ftemp << " Fahrenheit is " << C << " in Celsius" << endl;
+
+    return 0;
+}

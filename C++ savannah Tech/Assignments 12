@@ -1,0 +1,45 @@
+#include <iostream>
+#include <fstream>
+#include <string>
+
+using namespace std;
+
+int main() {
+    ifstream input;
+    ofstream output;
+    input.open("WeatherSummary.txt");
+    output.open("Report.txt");
+
+    string date, station;
+    int high, low;
+    float humidity, rain;
+
+    getline(input, date);
+    getline(input, station);
+    input >> high >> low >> humidity >> rain;
+
+    output << "Date: " << date << endl;
+    output << "Station: " << station << endl;
+
+    if (rain == 0.0) {
+        output << "No Rain" << endl;
+    } else {
+        output << "It rained today." << endl;
+    }
+
+    int range = high - low;
+    output << "The temperature range was " << range << " degrees." << endl;
+
+    if (humidity < 0.33) {
+        output << "It's Dry today" << endl;
+    } else if (humidity < 0.66) {
+        output << "It's Nice today" << endl;
+    } else {
+        output << "It's Muggy" << endl;
+    }
+
+    input.close();
+    output.close();
+
+    return 0;
+}

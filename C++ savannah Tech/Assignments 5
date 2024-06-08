@@ -1,0 +1,149 @@
+#include <iostream>
+
+using namespace std;
+
+int main() {
+    int Grades_for_Each_GPA;
+    cout << "Please enter grades in integer for each GPA (such as if you put 1 the output your grade is A that means you have 4.0 GPA):" << endl;
+    cin >> Grades_for_Each_GPA;
+
+    switch (Grades_for_Each_GPA) {
+        case 1:
+            cout << "Grade is A then the GPA is 4.0" << endl;
+            break;
+        case 2:
+            cout << "Grade is B then the GPA is 3.0" << endl;
+            break;
+        case 3:
+            cout << "Grade is C then the GPA is 2.0" << endl;
+            break;
+        case 4:
+            cout << "Grade is D then the GPA is 1.0" << endl;
+            break;
+        case 5:
+            cout << "Grade is F then the GPA is 0.0" << endl;
+            break;
+        default:
+            cout << "Try a different number to see what GPA you have." << endl;
+            break;
+    }
+
+    return 0;
+}
+//---------------------------------------------------
+#include <iostream>
+
+using namespace std;
+
+int main() {
+    int Grades;
+    cout << "Please enter grades in integer numeric format:" << endl;
+    cin >> Grades;
+
+    switch (Grades) {
+        case 100:
+            cout << "Your grade is out of the park." << endl;
+            break;
+        case 90:
+            cout << "Your grade is A, you passed." << endl;
+            break;
+        case 80:
+            cout << "Your grade is B, Good Job." << endl;
+            break;
+        case 70:
+            cout << "Your grade is C, Good but you should study a little bit more." << endl;
+            break;
+        case 60:
+            cout << "Your grade is D, sorry you didn't pass you should study more." << endl;
+            break;
+        case 50:
+            cout << "Your grade is F, sorry you didn't pass you should study more." << endl;
+            break;
+        default:
+            cout << "Try a different number to see the grade you have." << endl;
+            break;
+    }
+
+    return 0;
+}
+//------------------------------------------------
+#include <iostream>
+
+using namespace std;
+
+int main() {
+    int Days_when_I_have_Class;
+    cout << "Please enter days in integer numeric format:" << endl;
+    cin >> Days_when_I_have_Class;
+
+    switch (Days_when_I_have_Class) {
+        case 1:
+            cout << "Monday and Wednesday I go to Precalculus." << endl;
+            break;
+        case 2:
+            cout << "Tuesday and Thursday I go to Computer Programming Fund." << endl;
+            break;
+        case 3:
+            cout << "Friday I take a break." << endl;
+            break;
+        case 4:
+            cout << "Saturday I work on my homework." << endl;
+            break;
+        case 5:
+            cout << "Sunday submit your homework." << endl;
+            break;
+        default:
+            cout << "Try a different number to see the days when I go to class." << endl;
+            break;
+    }
+
+    return 0;
+}
+//-----------------------------------------------------------
+#include <iostream>
+#include <cmath>
+
+using namespace std;
+
+int main() {
+    int MO, E;
+    double R1, R2, R3, R4, RT1, RT2, RT3, RTB1;
+    cout << "Enter the value of resistor 1:" << endl;
+    cin >> R1;
+    cout << "Please enter the value of resistor 2:" << endl;
+    cin >> R2;
+    cout << "Please enter the value of resistor 3:" << endl;
+    cin >> R3;
+    cout << "Please enter the value of resistor 4:" << endl;
+    cin >> R4;
+    cout << "Please enter the voltage:" << endl;
+    cin >> E;
+    cout << "Select one of the menu options between 1 to 4:" << endl;
+    cin >> MO;
+
+    RT1 = R1 + R2 + R3 + R4;
+    RT2 = (1 / R1) + (1 / R2) + (1 / R3) + (1 / R4);
+    RTB1 = pow(RT2, -1);
+    RT3 = E / RT1;
+
+    switch (MO) {
+        case 1:
+            cout << "For series circuit, total resistance is: " << RT1 << endl;
+            break;
+        case 2:
+            cout << "For parallel circuit, total resistance is: " << RT2 << endl;
+            break;
+        case 3:
+            cout << "For series circuit, the current is: " << RT3 << endl;
+            break;
+        case 4:
+            cout << "Thank you for using the circuit program" << endl;
+            break;
+        default:
+            cout << "Please try again" << endl;
+            break;
+    }
+
+    return 0;
+}
+

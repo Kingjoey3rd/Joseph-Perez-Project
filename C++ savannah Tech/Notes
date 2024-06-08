@@ -1,0 +1,2829 @@
+#include <iostream>
+#include <iomanip>
+
+using namespace std;
+
+int main() {
+    double pi = 3.141592653589793;
+    double feet = 5280;
+    double number = 123.456789;
+
+    // The precision can be placed in the stream
+    cout << "\nFirst write: set precision to 5" << endl;
+    cout << setprecision(5)
+    cout << "\nPi = " << pi
+    cout << "\nFeet = " << feet
+    cout<< "\nNumber = " << number << endl;
+
+    // Fixed and precision, we get 5 decimal digits
+    // cout still remembers that precision is set to 5
+    cout << "\nSecond write: set fixed with precision of 5" << endl;
+    cout << setiosflags(ios::fixed)
+    cout << "\nPi = " << pi
+    cout     << "\nFeet = " << feet
+    cout     << "\nNumber = " << number << endl;
+
+    // Data is automatically right-justified within the setw() field width size
+    cout << "\nThird write: use setw(12)" << endl;
+    cout << "\nPi = " << setw(12) << pi
+    cout << "\nFeet = " << setw(12) << feet
+    cout << "\nNumber = " << setw(12) << number << endl;
+
+    return 0;
+}
+//-------------------------------------------------------
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+int main() {
+    string answer;
+    int R1, R2, Rt;
+
+    do {
+        cout << "Enter 2 resistor values in ohms: " << endl;
+        cin >> R1 >> R2;
+        Rt = R1 + R2;
+        cout << "\nTotal resistance = " << Rt << " ohms" << endl;
+        cout << "Would you like to continue? (yes/no): ";
+        cin.ignore();
+        getline(cin, answer);
+    } while (answer == "yes");
+
+    cout << "Thanks!" << endl;
+
+    return 0;
+}
+//---------------------------------------------
+#include <iostream>
+
+using namespace std;
+
+int main() {
+    int n, f = 1;
+    cout << "Please enter the number you want to find the factorial of: " << endl;
+    cin >> n;
+
+    int temp = n;  // Store the original value of n to use it in the loop
+
+    do {
+        f = f * temp;
+        temp--;
+    } while (temp > 1);
+
+    cout << "The factorial of " << n << " is " << f << endl;
+
+    return 0;
+}
+Chapter 2:
+1. double speed=70.5;//Speed is 70.5 MPH
+   double Time=4.5;//Time it takes to travel is 4.5 hours
+   double distance;
+   distance=speed*Time;
+   cout<<"Total Distance Traveled = "<<distance;
+____________________________________________________________________________________________________
+2. float speed=70.5;//Speed is 70.5 MPH
+   double Time=4.5;//Time it takes to travel is 4.5 hours
+   float distance;
+   distance=speed*Time;
+   cout<<"Total Distance Traveled = "<<distance;
+___________________________________________________________________________________________________
+3. float speed=70.5;//Speed is 70.5 MPH
+   double Time=4.5;//Time it takes to travel is 4.5 hours
+   float distance;
+   distance=speed*Time;
+   cout<<"Total Distance Traveled = "<<distance<<endl;
+   cout<<"Speed of the car = "<<speed<<endl;
+   cout<<"Total time = "<<Time<<endl;
+___________________________________________________________________________________________________
+CHAPTER 1:
+4. cout<<"Driving Summary!";
+   cout<<"\nI was driving the speed of 85 MPH for 4.5 hours going from georgia to North Carolina.";
+
+4b.nectort<<"\nI am a progammer.";//write out I am a programmer
+   cout<<"\nThis is great code.";
+   cout<<"\nDo you like my style?"
+___________________________________________________________________________________________________
+Chapter 2:
+5. double speed=70.5;//Speed is 70.5 MPH
+   double Time=4.5;//Time it takes to travel is 4.5 hours
+   double distance;
+   distance=speed*Time;
+   cout<<"Driving Summary!"<<endl;
+   cout<<"Driving at a speed of "<<speed<<"mph for "<<Time<<" hours"<<endl;
+   cout<<"Total distance traveled = "<< distance<<"miles"<<endl;
+   cout<<"Speed of car = "<<speed<<" mph"<<endl;
+   cout<<"Time taken = "<<Time<<" hours"<<endl;
+____________________________________________________________________________________________________
+6. float speed;//Speed is 80.5 MPH
+   double timE;//Time it takes to travel is 5.5 hours
+   float distance;
+   cout<<"The car speed = "<<endl;
+   cin>>speed;
+   cout<<"Please enter the time"<<endl;
+   cin>>timE;
+   distance=speed*timE;
+   cout<<"Total Distance Traveled = "<<distance<<endl;
+   cout<<"Speed of the car = "<<speed<<endl;
+   cout<<"Total time = "<<timE<<endl;
+____________________________________________________________________________________________________
+7. int nConnectors, nElbows, nPipes; //variables
+   int totalParts;
+   
+   cout<<"\nPVC Plumbing Store"<<endl;
+   
+   cout<<"Please Enter the Number of Pipes Connectors =";
+   cin>> nConnectors;
+   cout<<"Please Enter the Number of Elbows =";
+   cin>> nElbows;
+   cout<<"Please Enter the Number of Pipes =";
+   cin>> nPipes;
+   
+   totalParts = nConnectors + nElbows + nPipes;
+   
+   cout<<"\nParts Summary";
+   cout<<"\nNumber of Connectors:"<<nConnectors;
+   cout<<"\nNumber of Elbows:"<<nElbows;
+   cout<<"\nNumber of 5.5 ft pipe:"<<nPipes;
+   cout<<"\nTotal Number of Plumbing Parts:"<<totalParts;
+____________________________________________________________________________________________________
+8.  int nX , nY; //variables
+    int totalofXandY;
+    
+    cout<<"\nFind the value of X and Y"<<endl;
+    
+    cout<<"Please Enter the value of X =";
+    cin>> nX;
+    cout<<"Please Enter the value of Y =";
+    cin>> nY;
+
+    totalofXandY = nX * nY
+___________________________________________________________________________________________________
+9.#include <iomanip>
+
+    cout<<"Without using the ios::showpoint flag"<<endl;
+    cout<<"cout prints 66.66000 as "<<66.66000<<endl;
+    cout<<"cout prints 66.60000 as "<<66.60000<<endl;
+    cout<<"cout prints 66.00000 as "<<60.00000<<endl;
+    cout<<"cout prints 44.44400000 as "<<44.400000<<endl;
+    cout<<"cout prints 44.400002 as "<<44.400002<<endl;
+    cout<<"With using the ios:: showpoint flag"<<endl;
+    cout.setf(ios::showpoint);
+    cout<<"cout prints 66.66000 as "<<66.66000<<endl;
+    cout<<"cout prints 66.60000 as "<<66.60000<<endl;
+    cout<<"cout prints 66.00000 as "<<60.00000<<endl;
+    cout<<"cout prints 44.44400000 as "<<44.400000<<endl;
+    cout<<"cout prints 44.400002 as "<<44.400002<<endl;
+____________________________________________________________________________________________________
+10. double PI=3.1415926535;// double can hold 15 places
+    float pi=3.1415926535;// float can hold 7 places
+    cout.setf(ios::showpoint | ios::fixed);
+    cout.precision(4);
+    cout<<"pi as a float "<<pi<<endl;
+    cout<<"PI as a double "<<PI<<endl;
+____________________________________________________________________________________________________
+11.#include <cmath>
+
+    double x, sqrootx;
+    cout<<"Please enter the value of x = "<<endl;
+    cin>>x;
+    sqrootx=sqrt(x);
+    cout.setf(ios::showpoint | ios::fixed);
+    cout.precision(8);
+    cout<<" Square root of x = "<<sqrootx<<endl;
+_____________________________________________________________________________________________________
+12.
+    double P, R, V;
+    cout<<"Please enter the value of P = "<<endl;
+    cin>>P;
+    cout<<"Please enter the value of R = "<<endl;
+    cin>>R;
+    V=sqrt(P*R);
+    cout.setf(ios::showpoint | ios::fixed);
+    cout.precision(4);
+    cout<<" V is equal = "<<V<<endl;
+____________________________________________________________________________________________________
+12. 
+    int A, B, C, D;
+    cout<<"Please enter the value of A = "<<endl;
+    cin>>A;
+    cout<<"Please enter the value of B = "<<endl;
+    cin>>B;
+    cout.setf(ios::showpoint | ios::fixed);
+    cout.precision(8);
+    C=(A/B);
+    D=(A%B);
+    cout<<" C is equal = "<<C<<endl;
+    cout<<" D is equal = "<<D<<endl;
+_____________________________________________________________________________________________________
+13.
+    double A, B, C, D;
+    double E, F;
+    cout<<"Please enter the value of A = "<<endl;
+    cin>>A;
+    cout<<"Please enter the value of B = "<<endl;
+    cin>>B;
+    E=A/B;
+    //D=a%b;
+    F=A/B;
+    //F=a%b;
+    cout.setf(ios::showpoint | ios::fixed);
+    cout.precision(3);
+    cout<<" E is equal = "<<E<<endl;
+    //cout<<" A is equal = "<<A<<endl;
+    cout<<" F is equal = "<<F<<endl;
+    //cout<<" A is equal = "<<B<<endl;
+_____________________________________________________________________________________________________
+14. #include <string>
+
+using namespace std;
+
+int main()
+{
+    string Myname;
+    string Myschool;
+    
+    cout<< " Student Information";
+    cout<< "Please Enter My name: ";
+    getline(cin,Myname);
+    
+    cout<<"Please enter My school name: ";
+    getline(cin,Myschool);
+    
+    cout<< "Student IN"<<endl;
+    cout<< "My name:"<<Myname<<endl;
+    cout<< "My School name: "<<Myschool;
+___________________________________________________________________________________________________
+15.
+    double Ftemp, Ctemp, C;
+    cout<<"Please enter Celsius ="<<endl;
+    cin>>Ctemp;
+    Ftemp= Ctemp * 9.0 / 5.0 + 32.0;
+    C= 5.0 / 9.0 * (Ftemp - 32.0) ;
+    cout.setf(ios::showpoint | ios::fixed);
+    cout.precision(4);
+    cout<<"Temperature Assisignment"<<endl;
+    cout<<"For Temperature of "<<Ctemp<<" Celsius is "<<Ftemp<<" in Fahrenheit"<<endl;
+    cout<<"For Temperature of "<<Ftemp<<" Fahrenheit is "<<C<<" in Celsius"<<endl;
+__________________________________________________________________________________________________
+16.
+
+    #include <cmath>
+using namespace std;
+
+#define PI 3.14159265
+#define diameter 10.514
+int main()
+{
+    double AreaofCircle, Perimeter, Radius;
+    cout<<"Value of Radius = "<<endl;
+    cin>>Radius;
+    Perimeter= 2 * PI * Radius;
+    AreaofCircle= (diameter * diameter) / 4 * PI;
+    cout.setf(ios::showpoint | ios::fixed);	
+    cout.precision(4);
+    cout<<"Circle Equation"<<endl;
+    cout<<"Perimeter = "<<Perimeter<<endl;
+    cout<<"Area of Circle: "<<AreaofCircle<<endl;
+____________________________________________________________________________________________________
+17.
+	#include <string>
+using namespace std;
+
+int main()
+{
+    string month, day;
+    int monthSize, daySize;
+    
+    cout<<"Please enter the month:"<<endl;
+    getline(cin,month);
+    cout<<"Please enter the day:"<<endl;
+    getline(cin,day);
+    
+    monthSize=month.size();
+    daySize=day.size();
+    cout<<endl;
+    
+    cout<<"Date Info:"<<endl;
+    cout<<"Month: "<<month<<endl;
+    cout<<"Day: "<<day<<endl;
+    cout<<"Month Size: "<<monthSize<<endl;
+    cout<<"Day Size: "<<daySize<<endl;
+______________________________________________________________________________________________________
+18.
+#include <iomanip>
+using namespace std;
+
+int main()
+{
+    char char1, char2, char3;
+    int nChar1, nChar2, nChar3;
+    
+    cout<<"Enter three characters: "<<endl;
+    cin>>char1>>char2>>char3;
+    
+    cout<<"\n\n Your Characters: "<<setw(5) <<char1<<setw(5)<<char2<<setw(5)<<nChar3;
+    
+    nChar1 = static_cast<int>(char1);
+    nChar2 = static_cast<int>(char2);
+    nChar3 = static_cast<int>(char3);
+    
+    cout<< "\n Decimal From: "<<setw(5)<<nChar1<<setw(5)<<nChar2<<setw(5)<<nChar3;
+    
+    cout.unsetf(ios::dec);
+    cout.setf(ios::oct);
+    cout << "\n Octal form; "<<setw(5)<<nChar1<<setw(5)<<nChar2<<setw(5)<<nChar3;
+    
+    cout.unsetf(ios::oct);
+    cout.setf(ios::hex);
+    cout<< "\n Hex form: "<<setw(5)<<nChar1<<setw(5)<<nChar2<<setw(5)<<nChar3<<endl;
+____________________________________________________________________________________________________
+19.  #include <iostream>
+     #include <iomanip>
+using namespace std;
+
+int main()
+{
+    
+    float A, H, VolofPyramid;
+    
+    cout<<"Enter the Area of Vol of Pyramid"<<endl;
+    cin>>A;
+    cout<<"Enter the Height of Vol of Pyramid"<<endl;
+    cin>>H;
+    VolofPyramid=A*H/3;
+    cout.setf(ios::fixed);
+    cout.precision(2);
+    cout<<"Area Equal to "<<A<<endl;
+    cout<<"Height Equal to "<<H<<endl;
+    cout<<"Volume Equal to "<<VolofPyramid<<endl;
+    
+    return 0;
+____________________________________________________________________________________________________
+20.
+#include <iostream>
+using namespace std;
+ 
+int main() 
+{
+   int m = 44, n=66;
+   int b, B, c, C ;
+
+   cout<<"This is A now!!! "<<m<<endl;
+ 
+   // Value of a will not be increased before assignment.
+   b = ++m;
+   cout << "Line 1 - Value of m is :" << b << endl;
+
+
+   B =m++;
+   cout << "Line 2 - Value of m is :" << B << endl ;
+
+
+   cout << "Line 3 - Value of m is :" << m << endl ;
+
+   cout<<endl;
+
+   cout<< "This is the second part: "<<endl;
+   cout<<endl;
+
+   cout<<"This is N now!!! "<<n<<endl;
+ 
+   // Value of a will not be increased before assignment.
+   c = --n;
+   cout << "Line 4 - Value of n is :" << c << endl;
+
+
+   C =n--;
+   cout << "Line 5 - Value of n is :" << C << endl ;
+
+
+   cout << "Line 6 - Value of n is :" << n << endl ;
+_____________________________________________________________________________________________________
+21.
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+#define PI 3.14159265
+
+int main()
+{
+    
+    double AreaofSufaceA, AreaofSufaceB, VolumeofsphereA,VolumeofsphereB, RadiusA, RadiusB;
+    string Golfball, Baseball;
+    
+    cout<<"Value of Radius A = "<<Golfball<<endl;
+    cin>>RadiusA;
+    cout<<"Value of Radius B = "<<Baseball<<endl;
+    cin>>RadiusB;
+    
+    AreaofSufaceA=4*PI*(RadiusA*RadiusA);
+    AreaofSufaceB=4*PI*(RadiusB*RadiusB);
+    
+    VolumeofsphereA=RadiusA*RadiusA*RadiusA*4/3*PI;
+    VolumeofsphereB=RadiusB*RadiusB*RadiusB*4/3*PI;
+    
+    cout.setf(ios::showpoint | ios::fixed);	
+    cout.precision(2);
+    cout<<endl;
+    cout<<"Sphere Equation!!!"<<endl;
+    
+    cout<<endl;
+    
+    cout<<"Volume of SphereA  = "<<VolumeofsphereA<<endl;
+    cout<<"Volume of SphereB  = "<<VolumeofsphereB<<endl;
+    cout<<endl;
+    
+    cout<<"Area of SphereA: "<<AreaofSufaceA<<endl;
+    cout<<"Area of SphereB: "<<AreaofSufaceB<<endl;
+    
+    return 0;
+}
+_____________________________________________________________________________________________________
+22. #include <iostream>
+
+using namespace std;
+
+int main()
+{
+    string A ("My name is Joseph");
+    cout<<"The first string length is going to be "<<A.length()<<" bytes. \n";
+    
+    string B ("This course is Computer Programming");
+    cout<< "The Second string length is going to be "<<B.length()<<" bytes. \n";
+    
+    string C ( "Today is tuesday");
+    cout<<"The third string length is going to be "<<C.length()<<" bytes. \n";
+
+    return 0;
+____________________________________________________________________________________________________
+23.#include <iostream>
+
+using namespace std;
+
+int main()
+{
+   int x1,y1=24, z,w,x =42, t;
+   x1=y1;
+   cout<<y1<<","<<x<<endl;
+   cout<<x1<<","<<y1<<endl;
+    return 0;
+____________________________________________________________________________________________________
+24.#include <iostream>
+
+using namespace std;
+
+int main()
+{
+  int x=22;
+  cout<<"Initial of X = "<<x<<endl;
+  x+=6;
+  cout<<"Increment of X = "<<x<<endl;
+  x-=4;
+  cout<<"Decrement of X = "<<x<<endl;
+  x*=2;
+  cout<<"Multiply of X = "<<x<<endl;
+___________________________________________________________________________________________________
+25. #include <iostream>
+
+using namespace std;
+
+int main()
+{
+    int A, B, Adding, Subtraction, Multiply, Division, Mod;
+    A=50, B=7;
+    Adding=A+B;
+    Subtraction=A-B;
+    Multiply=A*B;
+    Division=A/B;
+    Mod=A%B;
+    cout<<"50+7="<<Adding<<endl;
+    cout<<"50-7="<<Subtraction<<endl;
+    cout<<"50*7="<<Multiply<<endl;
+    cout<<"50/7="<<Division<<endl;
+    cout<<"The Remainder of 50/7 is: "<<Mod<<endl;
+____________________________________________________________________________________________________
+26.#include <iostream>
+#include <cmath>
+using namespace std;
+
+#define PI 3.14159265
+
+int main()
+{
+    float Inner_of_circleR, Outter_of_circleR, Inner_Area, Outter_Area, Inner_Circumference, Outter_Circumference;
+    cout<<"ENTER THE RADIUS OF THE INNER OF THE CIRCLE: "<<endl;
+    cin>>Inner_of_circleR;
+    cout<<"ENTER THE RADIUS OF THE OUTTER OF THE CIRCLE: "<<endl;
+    cin>>Outter_of_circleR;
+    Inner_Area=pow(Inner_of_circleR,2)*PI;
+    Outter_Area=pow(Outter_of_circleR,2)*PI;
+    Inner_Circumference=2*PI*Inner_of_circleR;
+    Outter_Circumference=2*PI*Outter_of_circleR;
+    cout.setf(ios::showpoint | ios::fixed);
+    cout.precision(2);
+    cout<<endl<<endl;
+    cout<<"Intro Circle"<<endl<<endl;
+    cout<<"Area of the Circle! "<<endl<<endl;
+    cout<<"Inner Area of the Circle = "<<Inner_Area<<endl;
+    cout<<"Outter Area of the Circle = "<<Outter_Area<<endl;
+    cout<<endl;
+    cout<<"Circumference of the Circle! "<<endl<<endl;
+    cout<<"Circumference of Inner Circle = "<<Inner_Circumference<<endl;
+    cout<<"Circumference of Inner Circle = "<<Outter_Circumference<<endl;
+    
+    return 0;
+   
+}
+____________________________________________________________________________________________________
+27.#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    int M, N, Adding, Subtraction, Multiply, Division, Remainder, Negate;
+    M=34, N=6;
+    Adding=M+N;
+    Subtraction=M-N;
+    Multiply=M*N;
+    Division=M/N;
+    Remainder=M%N;
+    Negate=-N;
+    cout<<"34+6= "<<Adding<<endl;
+    cout<<"34-6= "<<Subtraction<<endl;
+    cout<<"34*6= "<<Multiply<<endl;
+    cout<<"34/6= "<<Division<<endl;
+    cout<<"The Remainder of 34/6 is: "<<Remainder<<endl;
+    cout<<"The Negate of N is: "<<Negate<<endl;
+___________________________________________________________________________________________________
+28.
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+#define AO 4.828
+
+int main()
+{
+    float Length_of_One_Side, Area_of_Octagon;
+    cout<<"ENTER THE Length of One Side "<<endl;
+    cin>>Length_of_One_Side;
+    Area_of_Octagon=pow(Length_of_One_Side,2)*AO;
+    cout.setf(ios::showpoint | ios::fixed);
+    cout.precision(3);
+    cout<<endl;
+    cout<<"Intro of OCTAGON!"<<endl<<endl;
+    cout<<"Length of One Side is "<< Length_of_One_Side<<endl;
+    cout<<"Area of the OCTAGON = "<<Area_of_Octagon<<endl;
+    
+    
+    
+    return 0;
+   
+}
+____________________________________________________________________________________________________
+CHAPTER 3
+1.#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    float Gastank , Airtire;
+    cout<<"Please Fill Gastank = "<<endl;
+    cin>>Gastank;
+    if(Gastank<.25)   
+    {
+        cout<<"Low on Gas";
+    }
+    cout<<endl;
+    {
+        cout<<"Keep on driving";
+    }
+    cout<<endl;
+    
+    cout<<"Please Fill Air in tire = "<<endl;
+    cin>>Airtire;
+    if(Airtire<.25)
+    {
+        cout<<"Low on Air for tire"<<endl;
+    }
+
+    {
+        cout<<"Keep on driving"<<endl;
+    }
+    return 0;
+}
+___________________________________________________________________________________________________
+2.#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    bool Gas_Tank_Is_Good;
+    if(Gas_Tank_Is_Good == true)
+    {
+        cout<<"you can continue on "<<endl;
+    }
+    else
+    {
+        cout<<"Please stop nearest gas station"<<endl;
+    }    
+    return 0;
+}
+____________________________________________________________________________________________________
+3.#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    bool Milk_Is_Good;
+    if(Milk_Is_Good == false)
+    {
+        cout<<"Cereal for Breakfast "<<endl;
+    }
+    else
+    {
+        cout<<"Toast for Breafast"<<endl;
+    }    
+    return 0;
+}
+____________________________________________________________________________________________________
+4.#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    int Number;
+    cout<<"Please Enter number"<<endl;
+    cin>>Number;
+    if(Number > 0)
+    {
+        cout<<"\n The number is postive!  "<<endl;
+    }
+    else
+    {
+        cout<<"\n The number is zero or negative ! "<<endl;
+    }    
+    return 0;
+}
+____________________________________________________________________________________________________
+5.#include <iostream>
+
+using namespace std;
+
+int main()
+{
+	int x,y;
+	cout<<"enter number for x"<<endl;
+	cin>>x;
+	cout<<"enter number for y"<<endl;
+	cin>>y;
+	if (x==y)
+	{
+	cout<<"yes"<<endl;
+	}
+	else
+	{
+	cout<<"no"<<end;
+	}
+___________________________________________________________________________________________________
+6A.#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    int A, B;
+    cout<<"Please use logic level and Please enter if today is Tuesday or Thurday."<<endl;
+    cin>>A;
+    cout<<"Please use logic level and Please enter if today is Monday or Wednesday."<<endl;
+    cin>>B;
+    
+    if(A>B){
+        cout<<"If today is Tuesday or Thurday, I have to go to C++ Class";
+    }
+    else if (A<B){
+        cout<<"If today is Monday or Wednesday, I have to go to Digital 1 Class";
+    }
+    else{
+        cout<<"Going to take a Break";
+    }
+    return 0;
+}
+____________________________________________________________________________________________________
+7.#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    int X;
+    cout<<"Enter the value of x?"<<endl;
+    cin>>X;
+    
+    if(X>0)
+    {
+        cout<<"If X is going to be Positive"<<endl;
+    }
+    
+    if (X>=1 && X<=10){
+        cout<<"If X is between 1 to 10"<<endl;
+    }
+    else{
+        cout<<"X is out of range";
+    }
+    return 0;
+}
+___________________________________________________________________________________________________
+8A.#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    bool Milk_is_Good;
+    cout<<"Please enter the status of Milk is good: In terms of logic levels "<<endl;
+    cin>>Milk_is_Good;
+    if(Milk_is_Good==true)
+    {
+        cout<<"Creal"<<endl;
+    }
+    else
+    {
+        cout<<"Toast"<<endl;
+    }
+    return 0;
+}
+____________________________________________________________________________________________________
+9.#include <iostream>
+using namespace std;
+
+int main()
+{
+   int Temperture;
+   bool Air_Condition;
+   cout<<"Enter the value of Temperture"<<endl;
+   cin>>Temperture;
+   
+   if(Temperture>80)
+   {
+      Air_Condition= Temperture>80 ? "On" : "Off";
+      cout<<"The AC unit is "<<Air_Condition<<endl;
+   }
+   else
+   {
+    Air_Condition= Temperture<80 ? "Off" :"On";
+     cout<<"The AC unit is "<<Air_Condition<<endl;
+   }
+    return 0;
+}
+____________________________________________________________________________________________________
+10A.#include <iostream>
+
+using namespace std;
+
+int main()
+{
+  int Wind_Speed;
+  bool B_Hurricane;
+  cout<<"Enter the value of Wind Speed?"<<endl;
+  cin>>Wind_Speed;
+ 
+  cout<<endl;
+
+  B_Hurricane=Wind_Speed>75 ? true:false;
+  cout<<B_Hurricane;
+
+  return 0;
+}
+____________________________________________________________________________________________________
+11A.#include <iostream>
+#include <string>
+using namespace std;
+
+int main()
+{
+  float Tempture;
+  string AC;
+  cout<<"Enter the value of Tempture:"<<endl;
+  cin>>Tempture;
+ 
+  cout<<endl;
+
+  AC=Tempture>80 ? "ON" : "OFF";
+  cout<<"AC is "<<AC;
+
+  return 0;
+}
+___________________________________________________________________________________________________
+12 problem 1.
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    int Grades_for_Each_GPA;
+    cout<<"Please enter Grades in interger for Each GPA = "<<endl;
+    cin>>Grades_for_Each_GPA;
+    switch(Grades_for_Each_GPA)
+{
+    case 1:
+    cout<<"Grade is A then the GPA is 4.0"<<endl;
+    break;
+    case 2:
+    cout<<"Grade is B then the GPA is 3.0"<<endl;
+    break;
+    case 3:
+    cout<<"Grade is C then the GPA is 2.0"<<endl;
+    break;
+    case 4:
+    cout<<"Grade is D then the GPA is 1.0"<<endl;
+    break;
+    case 5:  
+    cout<<"Grade is F then the GPA is 0.0"<<endl;
+    break;
+    default:
+    cout<<"Try a different Number to see what GPA you have."<<endl;
+}
+    return 0;
+}
+____________________________________________________________________________________________________
+13.problem 2.
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    int Grades;
+    cout<<"Please enter Grades in interger numeric format = "<<endl;
+    cin>>Grades;
+    switch(Grades)
+{
+    case 100:
+    cout<<"Your grade is out of the park."<<endl;
+    break;
+    case 90:
+    cout<<" Your grade is A, you passed."<<endl;
+    break;
+    case 80:
+    cout<<"Your grade is B, Good Job."<<endl;
+    break;
+    case 70:
+    cout<<"Your grade is C, Good but you should study little bit more."<<endl;
+    break;
+    case 60:
+    cout<<"Your grade is D, sorry you didn't pass you should study more."<<endl;
+    break;
+    case 50:
+    cout<<"Your grade is F, sorry you didn't pass you should study more."<<endl;
+    break;
+    default:
+    cout<<"Try a different Number to see the grade you have."<<endl;
+}
+    return 0;
+}
+___________________________________________________________________________________________________
+14.problem 3.
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    int Days_when_I_have_Class;
+    cout<<"Please enter Days in interger numeric format?"<<endl;
+    cin>>Days_when_I_have_Class;
+    switch(Days_when_I_have_Class)
+{
+    case 1:
+    cout<<"Monday and Wednesday I go to Precalculus."<<endl;
+    break;
+    case 2:
+    cout<<"Tuesday and Thurday I go to Computer Programming Fund."<<endl;
+    break;
+    case 3:
+    cout<<"Friday I take a Break."<<endl;
+    break;
+    case 4:
+    cout<<"Saturday I work on my homework."<<endl;
+    break;
+    case 5:
+    cout<<"Sunday submit your homework."<<endl;
+    break;
+    default:
+    cout<<"Try a different Number to see the days."<<endl;
+}
+    return 0;
+}
+____________________________________________________________________________________________________
+15.problem 4.
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+int main()
+{
+   int menu_option, VR_1,VR_2,VR_3,VR_4, I;
+   float resistor_1, resistor_2, resistor_3, resistor_4, Rt_A, Rt_B, Rt_C, Rt_B1;
+   VR_1= 2, VR_2= 4, VR_3=2, VR_4=2, I=1;
+   cout<<"Please enter the value of resistor 1: "<<endl;
+   cin>>resistor_1;
+   cout<<"Please enter the value of resistor 2: "<<endl;
+   cin>>resistor_2;
+   cout<<"Please enter the value of resistor 3: "<<endl;
+   cin>>resistor_3;
+   cout<<"Please enter the value of resistor 4: "<<endl;
+   cin>>resistor_4;
+   cout<<"Select one of the menu options between 1 to 4"<<endl;
+   cin>>menu_option;
+
+   Rt_A=resistor_1+resistor_2+resistor_3+resistor_4;
+   Rt_B=(1/resistor_1)+ (1/resistor_2)+ (1/resistor_3)+ (1/resistor_4);
+   Rt_B1=pow(Rt_B,-1);
+   Rt_C=(I*VR_1)+(I*VR_2)+(I*VR_3)+(I*VR_4);
+
+   switch (menu_option)
+   {
+    case 1:
+    cout<<"The total resistance for a series circuit is: "<<Rt_A<<endl;
+    break;
+    case 2:
+    cout<<"The total resistance for a parallel circuit is: "<<Rt_B1<<endl;
+    break;
+    case 3:
+    cout<<"For the current series circuit, the total resistance is: "<<Rt_C<<endl;
+    break;
+    case 4:
+    cout<<"Thank you for using the circuit program"<<endl;
+    break;
+    default:
+    cout<<"Error, not a menu option"<<endl;
+   }
+
+    return 0;
+}
+
+____________________________________________________________________________________________________
+16.
+#include <iostream>
+using namespace std;
+
+int main()
+{
+   
+   cout<<"How many Thursdays do you want to see?"<<endl;
+
+   for (int i=0; i<6; ++i)
+   {
+       cout<<i<<" Thursday"<<endl;
+   }
+
+    return 0;
+}
+____________________________________________________________________________________________________
+17.
+#include <iostream>
+using namespace std;
+
+int main()
+{
+   int A;
+   cout<<"How many Thursdays do you want to see?"<<endl;
+   cin>>A;
+   for (int i=1; i<A; ++i)
+   {
+       cout<<i<<" Thursday"<<endl;
+   }
+
+    return 0;
+}
+____________________________________________________________________________________________________
+18.#include <iostream>
+#include <iomanip>
+using namespace std;
+
+int main ()
+{
+  int lettercount;
+  lettercount = 0;
+  for (int i = 74; i < 75; ++i)
+    {
+      cout << setw (6) << static_cast < char >(i);
+    }
+    for (int i = 79; i < 80; ++i)
+    {
+      cout << setw (6) << static_cast < char >(i);
+    }
+    for (int i = 83; i < 84; ++i)
+     cout << setw (6) << static_cast < char >(i);
+    {
+    for (int i = 69; i < 70; ++i)
+     cout << setw (6) << static_cast < char >(i);
+    }
+    {
+    for (int i = 80; i < 81; ++i)
+     cout << setw (6) << static_cast < char >(i);
+    }
+    {
+    for (int i = 72; i < 73; ++i)
+     cout << setw (6) << static_cast < char >(i);
+    }
+  return 0;
+}
+____________________________________________________________________________________________________
+19.
+#include <iostream>
+#include <iomanip>
+using namespace std;
+
+int main ()
+{
+  for (int i=13; i<25; i++)
+  { if (i==25)
+  {
+      break;
+  }
+  cout<<i;
+  }
+  return 0;
+}
+____________________________________________________________________________________________________
+20.
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    int I=0;
+    while(I<4)
+    {
+    cout<<"Today is Tuesday";
+    I++;
+    }
+    cout<<"DONE"
+    return 0;
+}
+____________________________________________________________________________________________________
+21.
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main()
+{
+    string answer="YES";//Initialize the answer to yes
+    cout<<"We want to test the while loop from the answer provided"<<endl;
+    
+    while(answer=="YES")
+    {
+    cout<<"Today is Tuesday"<<endl;
+    cout<<"Do you want to continue YES OR NO"<<endl;
+    getline(cin,answer);
+    }
+    cout<<"DONE";
+    return 0;
+}
+____________________________________________________________________________________________________
+22.
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main()
+{
+int i,TIMES;
+    i=0;
+    cout<<"please enter how many times you want the loop to be executed- TIME:"<<endl;
+    cin>>TIMES;
+    while (i<TIMES)
+    {
+    cout<<i<<endl;
+    i++;
+    }
+    cout<<"DONE";
+    return 0;
+}
+___________________________________________________________________________________________________
+23.
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main()
+{
+int R1, R2, RT;;
+    string answer="YES";//INITALIZE THE ANSWER TO YES
+    cout<<"WOULD YOU LIKE TO CALCULATE THE TOTAL RESISTANCE IN A SERIES?"<<endl;
+    while (answer=="YES")
+    cin>>R1;
+    cin>>R2;
+    {
+    cout<<"PLEASE ENTER THE RESISTANCE OF 2 RESISTORS"<<endl;
+    RT=R1+R2;
+    cout<<"THE TOTAL RESISTANCE OF THE CIRCUIT IS:"<<RT<<endl;
+    cout<<"WOULD YOU LIKE TO CONTINUE COMPUTING YES/NO: ";
+    cin.ignore();
+    getline(cin,answer);
+    }
+    cout<<"THANKS FOR USING OUR CALCULATOR"<<endl;
+    return 0;
+}
+____________________________________________________________________________________________________
+24.#include <iostream>
+#include <cmath>
+using namespace std;
+
+int main()
+{
+    int X;
+    cout<<"PLEASE ENTER ANY NUMBER: ";
+    cin>>X;
+    while (X>0)
+    {
+    cout<<"PLEASE ENTER THE SQUARE NUMBER YOU WANT TO BE: "<<pow(X,2)<<endl;
+    cout<<"ENTER THE NEXT NUMBER TO SQUARE "<<endl;
+    cin>>X;
+    }
+    cout<<"THANKS FOR USING OUR CALCULATOR"<<endl;
+    return 0;
+____________________________________________________________________________________________________
+25.
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    int count=0;
+    do{
+         cout<<"Today is Thrusday"<<count<<endl;
+         ++count;
+    }
+    while (count<6);
+    cout<<"Done!!!!!";
+   
+
+    return 0;
+}
+____________________________________________________________________________________________________
+26.
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+int main()
+{
+    int i=1, N,SUM=0, NUMBER,EQUAL;
+    
+    cout<<"How many numbers would you like to find the sum of using them to be squared: ";
+    cin>>N;
+    cout<<"Enter the number you like to be powered by 2 "<<endl;
+    cin>>NUMBER;
+    while(i<=N)
+    {
+    EQUAL=pow(NUMBER,2);
+    cout<<"The Power of "<<NUMBER<<" going to be: "<<EQUAL<<endl;
+    cout<<"Enter the next number to continue: ";
+    cin>>NUMBER;
+    i++;
+    SUM=SUM+EQUAL;
+    }
+    cout<<SUM<<endl;
+    cout<<"Thanks for using our calculator!!";
+    return 0;
+}
+___________________________________________________________________________________________________
+27.#include <iostream>
+#include <iomanip>
+using namespace std;
+
+int main ()
+{
+  for (int i=13; i<25; i++)
+  { if (i==25)
+  {
+    break;
+  }
+  cout<<i<<", ";
+  }
+  return 0;
+}
+____________________________________________________________________________________________________
+28.
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    int count=13;
+    do{
+         cout<<count<<",";
+         ++count;
+         
+    }
+    while (count<25);
+    cout<<"Done!!!!!";
+   
+
+    return 0;
+}
+____________________________________________________________________________________________________
+29.
+#include <iostream>
+
+using namespace std;
+void Classtaking()
+{
+    cout<<"I am taking ECET 1191"<<endl;
+}
+void Currentdate()
+{
+    cout<<"Today is Tuesday"<<endl;
+}
+int main()
+{
+   Classtaking();
+   Currentdate();
+    return 0;
+}
+___________________________________________________________________________________________________
+30.
+#include <iostream>
+#include <string>
+using namespace std;
+void secondfunction(string fname)
+{
+    cout<<fname<<"Stronen"<<endl;
+}
+
+int main()
+{
+    secondfunction("Billy ");
+    secondfunction("Abby ");
+    secondfunction("Bobby ");
+    return 0;
+}
+________________________________________________________________________________________________________
+31.
+#include <iostream>
+#include <string>
+using namespace std;
+void secondfunction(string fruit)
+{
+    cout<<fruit<<" This is a fruit"<<endl;
+}
+void thirdfunction(string fruits)
+{
+    cout<<fruits<<" These are fruit"<<endl;
+}
+int main()
+{
+    secondfunction("Apple                  ");
+    secondfunction("Banana                 ");
+    secondfunction("Watermelon             ");
+    thirdfunction("kiwi and Strawberries  ");
+    return 0;
+}
+____________________________________________________________________________________________________
+32.
+#include <iostream>
+#include <string>
+using namespace std;
+int square(int i)
+{
+    return i*i;
+}
+int main()
+{   
+    int i=1;
+    while (i!=0)
+    {
+    cout<<"Please enter the number you want to squared: "<<endl;
+    cin>>i;
+    cout<<square(i)<<endl;
+    }
+    cout<<"Thanks for using our Calculator"<<endl;
+    
+    return 0;
+}
+____________________________________________________________________________________________________
+33.
+#include <iostream>
+#include <cmath>
+using namespace std;
+int squareroot(int i)
+{
+    return pow(i,.5);
+}
+int main()
+{   
+    int i;
+    cout<<"Please enter the number you want to squared: "<<endl;
+    cin>>i;
+    cout<<squareroot(i)<<endl;
+    cout<<"Thanks for using our Calculator"<<endl;
+    
+    return 0;
+}
+___________________________________________________________________________________________________
+34.
+#include <iostream>
+#include <cmath>
+#include <string>
+using namespace std;
+int Square, square_root, CUBE;
+void Greeting();
+
+void Greeting()
+{
+  cout<<"Hello my name is Joseph Perez"<<endl;  
+}
+
+int square(int i)
+{
+    return i*i;
+}
+
+int squareroot(int i)
+{
+    return pow(i,.5);
+}
+ 
+int Cube(int i)
+{
+     return i*i*i;
+}
+int main()
+{
+
+    cout<<"square is going be: "<<endl;
+    cin>>Square;
+    cout<<"square Root is going be: "<<endl;
+    cin>>square_root;
+    cout<<"Cube is going be: "<<endl;
+    cin>>CUBE;
+    cout<<square(Square)<<" , "<<squareroot(square_root)<<" , "<<Cube(CUBE);
+    return 0;
+}   
+___________________________________________________________________________________________________
+35.
+#include <iostream>
+
+using namespace std;
+int add(int x, int y);//Funtion Prototype
+
+int main()
+{
+    //call the add funtion in the main program
+    cout<<add(6,4);
+
+    return 0;
+}
+//funtion to add is given below
+int add(int num1, int num2)
+{
+    int num3=num1+num2;
+    return num3;
+}
+____________________________________________________________________________________________________
+36.
+#include <iostream>
+
+using namespace std;
+int add(int x, int y);//Funtion Prototype
+int x,y;
+int main()
+{
+cout<<"Pick any number that you want to be for X: "<<endl;
+cin>>x;
+cout<<"Pick any number that you want to be for Y: "<<endl;
+cin>>y;
+    //call the add funtion in the main program
+    cout<<add(x,y);
+
+    return 0;
+}
+//funtion to add is given below
+int add(int num1, int num2)
+{
+    cout<<"The answer is going to be: "<<endl;
+    int num3=num1+num2;
+    return num3;
+}
+____________________________________________________________________________________________________
+37.
+#include <iostream>
+
+using namespace std;
+int add(int x, int y);//Funtion Prototype
+int sub(int x, int y);
+int Mutiply(int x, int y);
+int divid(int x, int y);
+int main()
+{
+int x,y;    
+cout<<"Pick any number that you want to be for X: "<<endl;
+cin>>x;
+cout<<"Pick any number that you want to be for Y: "<<endl;
+cin>>y;
+    //call the add funtion in the main program
+    cout<<add(x,y)<<endl;
+    cout<<sub(x,y)<<endl;
+    cout<<Mutiply(x,y)<<endl;
+    cout<<divid(x,y)<<endl;
+
+    return 0;
+}
+//funtion to add is given below
+int add(int num1, int num2)
+{
+    cout<<"The answer is going to be: "<<endl;
+    int num3=num1+num2;
+    return num3;
+}
+int sub(int num1, int num2)
+{
+    cout<<"The answer is going to be: "<<endl;
+    int num3=num1-num2;
+    return num3;
+}
+int Mutiply(int num1, int num2)
+{
+    cout<<"The answer is going to be: "<<endl;
+    int num3=num1*num2;
+    return num3;
+}
+int divid(int num1, int num2)
+{
+    cout<<"The answer is going to be: "<<endl;
+    int num3=num1/num2;
+    return num3;
+}
+____________________________________________________________________________________________________
+38.
+#include <iostream>
+
+using namespace std;
+int max(int x, int y, int z);
+
+int main()
+{
+    int x,y,z;
+    do
+    {
+    cout<<"Please enter three positive intergers"<<endl;
+    cin>>x>>y>>z;
+    cout<<max(x,y,z)<<endl;
+    } while (x!=0);
+    
+    return 0;
+}
+int max(int num1, int num2, int num3)
+{
+    if (num1<num2)
+    {
+        return num3;
+    }
+    else if (num2<num3)
+    {
+        return num1;
+    }
+    else 
+    {
+        return num2;
+    }
+}
+____________________________________________________________________________________________________
+39. Chapter 5
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    int i=8;
+    int y=6;
+    double q=10.0;
+    double r=14.0;
+    
+    cout<<&i<<endl;
+    cout<<&y<<endl;
+    cout<<&q<<endl;
+    cout<<&r<<endl;
+
+    return 0;
+}
+____________________________________________________________________________________________________
+40.
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    int i=8;
+    int y=6;
+    double q=10.23;
+    double r=14.32;
+    
+    
+    cout<<"Value of x is ="<<i<<", The Address is = "<<&i<<endl;
+    cout<<"Value of y is ="<<y<<", The Address is = "<<&y<<endl;
+    cout<<"Value of q is ="<<q<<", The Address is = "<<&q<<endl;
+    cout<<"Value of r is ="<<r<<", The Address is = "<<&r<<endl;
+
+    return 0;
+}
+___________________________________________________________________________________________________
+41.
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    int *p,x=100;
+    p=&x;
+   
+    cout<<"The Address of x: "<<&x<<endl;
+    cout<<"The Address of x: "<<p<<endl;   
+    cout<<"The Address of p: "<<&p<<endl;
+    cout<<"value of x: "<<*p<<endl;
+    
+    return 0;
+}
+____________________________________________________________________________________________________
+42.
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    int var[3] = {10,20,40};
+    int*varptr;
+    varptr = var;
+    for (int i=0; i<3; i++)
+    {
+        cout<<"Value at variable varptr is : "<<varptr<<endl;
+        cout<<"Value at *varptr is : "<<*varptr<<endl;
+        varptr++;
+    }
+
+    return 0;
+}
+___________________________________________________________________________________________________
+43.
+#include <iostream>
+using namespace std;
+ 
+int main()
+{
+    int n=34;
+    int r=n; // "r" has the same value as "n" but will not have the same address
+
+    int a=12;
+    int &b=a; // assigning "&b" is a reference to "a" with while holding the same address
+
+    cout<<"n= "<<n<<endl;
+    cout<<"&n= "<<&n<<endl;
+    cout<<"r= "<<r<<endl;
+    cout<<"&r= "<<&r<<endl;
+
+    cout<<endl;
+
+    cout<<"a= "<<a<<endl;
+    cout<<"&a= "<<&a<<endl;
+    cout<<"b= "<<b<<endl;
+    cout<<"&b= "<<&b<<endl;
+
+  return 0;
+}
+____________________________________________________________________________________________________
+44.
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    int n= 34;
+    int*p= &n;//p stores the address of n
+    int&r= *p;//r is a references for n
+    cout<<"n = "<<n<<" ,&n = "<<&n<<" ,p = "<<p<<endl;
+    cout<<"&p = "<<&p<<endl;
+    cout<<"*p = "<<*p<<endl;
+    cout<<"r = "<<r<<endl;
+
+    return 0;
+}
+________________________________________________________________________________________________
+45.
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+   int m= 64, n= 42;
+   cout<<m<<", "<<n<<", "<<max(m,n);
+   max(m, n)=84;
+   cout<<m<<", "<<n<<", "<<max(m,n);
+
+    return 0;
+}
+____________________________________________________________________________________________________
+46.
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    float grades [4]={75,34,86,95};
+    float Sum, Average;
+    int i;
+    
+    Sum=0.0;
+    
+    for (i=0; i<4; ++i)
+    {
+        Sum=Sum+grades[i];
+    }
+    
+    Average=Sum/4;
+    
+    cout<<"The Average GRADE is: "<<Average<<endl;
+    cout<<"Total grade of sum is: "<<Sum<<endl;
+    return 0;
+}
+____________________________________________________________________________________________________
+47.
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main()
+{
+    float Grades [4];
+    float SUM, AVG;
+    int i;
+    
+    string EXAM[4]={"EXAM 1","EXAM 2","EXAM 3","EXAM 4"};
+    
+    for(i=0;i<4;++i)
+    {
+        cout<<"Input grade for "<<EXAM[i]<<": "<<endl;
+        cin>>Grades[i];
+    }
+    SUM=0;
+   for(i=0;i<4;++i)
+   {
+    SUM=SUM+Grades[i];
+   }
+   AVG=SUM/4;
+    cout<<"The Average GRADE is: "<<AVG<<endl;
+    cout<<"Total grade of sum is: "<<SUM<<endl;
+    return 0;
+}
+____________________________________________________________________________________________________
+48.
+#include <iostream>
+#include <string>
+#include <vector>
+using namespace std;
+
+int main()
+{
+    vector <string> Vexam;
+    vector <float> Vgrade;
+    
+    float sum=0.0, ave, grade;
+    int i;
+    
+    Vgrade.push_back(grade);
+    Vgrade.push_back(grade);
+    Vgrade.push_back(grade);
+    Vgrade.push_back(grade);
+    
+    for(i=0; i<4; i++)
+    {
+        cout<<"Please enter the grade for "<<Vexam.at(i)<<endl;
+        cin>>Vgrade.at(i);
+    }
+    for(i=0; i<4; i++)
+    {
+        sum=sum+Vgrade.at(i);
+    }
+    ave=sum/4;
+    cout.precision(2);
+    cout.setf(ios::fixed);
+    cout<<"The average of the grade for the exams is "<<ave;
+    
+    return 0;
+____________________________________________________________________________________________________
+49.
+#include <iostream>
+
+using namespace std;
+
+void sum (int arr1[], int arr2[])
+{
+    int tmp[4];
+    for (int i=0; i<4;i++)
+    {
+        tmp[i]=arr1[i]+arr2[i];
+        cout<<tmp[i]<<endl;
+    }
+}
+int main()
+{
+    int a[4]={20,40,60,80};
+    int b[4]={10,12,14,16};
+    sum(a,b);
+
+    return 0;
+}
+____________________________________________________________________________________________________
+50.
+#include <iostream>
+#include <string>
+using namespace std;
+
+void GRADES (string EXAM[], float GRADES[]);
+float Avg (float GRADES[], float &SUM);
+
+void GRADES (string EXAM[], float GRADES[])
+{
+    for(int i=0;i<4;++i)
+    {
+        cout<<"Please input grade for "<<EXAM[i]<<": "<<endl;
+        cin>>GRADES[i];
+    }
+}
+
+float Avg (float GRADES[], float &SUM)
+{
+    SUM=0.0;
+    for(int i=0;i<4;++i)
+    {
+        SUM=SUM+GRADES[i];
+    }
+
+    return SUM/4.0;
+}
+
+int main()
+{
+    float grade_score [4];
+    string EXAM[4]={"EXAM 1","EXAM 2","EXAM 3","EXAM 4"};
+    float SUM, AVG;
+    GRADES (EXAM, grade_score);
+    AVG= Avg(grade_score, SUM);
+    cout<<SUM<<endl;
+    cout<<AVG<<endl;
+    return 0;
+}
+___________________________________________________________________________________________________
+51.
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    int ARR [2][3]={10,20,40,60,80,100};
+    int ROW, COL;
+    
+    for (ROW=0; ROW<2; ROW++)
+    {
+        for (COL=0; COL<3; COL++)
+        {
+            cout<<"ARR ["<<ROW<<"]["<<COL<<"] = "<<ARR[ROW][COL]<<endl;
+        }
+    }
+    
+
+    return 0;
+}
+____________________________________________________________________________________________________
+52.
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    int NUMBER[4];
+    int I;
+    
+    
+    
+    for (I=1; I<=4; I++)
+    {
+        cout<<" Please enter four Interger ["<<I<<"] : ";
+        cin>>NUMBER[I];
+    }
+    cout<<endl;
+    
+    for (I=4; I>0; --I)
+    {
+        cout<<"Output Element ["<<I<<"] : "<<NUMBER[I]<<endl;
+    }
+    return 0;
+}
+___________________________________________________________________________________________________
+53.
+#include <iostream>
+using namespace std;
+
+
+int main()
+{
+    int number1 [4]={10,20,40,80};
+    int number2 [4]={10,20};
+    double number3 [4];
+    int i;
+
+    cout<<endl;
+
+    for(i=0;i<4;++i)
+    {
+
+        cout<<"number1 ["<<i<<"] : "<<number1 [i]<<endl;
+    }
+
+    cout<<endl;
+
+    for(i=0;i<4;++i)
+    {
+
+        cout<<"number2 ["<<i<<"] : "<<number2 [i]<<endl;
+    }
+
+    cout<<endl;
+
+    for(i=0;i<4;++i)
+    {
+
+        cout<<"number3 ["<<i<<"] : "<<number3 [i]<<endl;
+    }
+
+    return 0;
+}
+___________________________________________________________________________________________________
+54.
+#include <iostream>
+
+using namespace std;
+
+void WRITEHELLOWORLD (int row, int col);
+
+int main()
+{
+    cout << "Pick any number of rows: ";
+    int row;
+    cin  >> row;
+    cout << "Pick any number of columns: ";
+    int col;
+    cin  >> col;
+    WRITEHELLOWORLD(row,col);
+}    
+    
+void WRITEHELLOWORLD (int row, int col)
+{
+    if (row!=0 && col!=0)
+    {
+         for(int X = 0; X < row; ++X)
+    {
+        for(int H = 0; H < col; ++H)
+            cout << "Hello world !!" << ' ';
+        cout << '\n';
+    }
+    }
+    else 
+    {
+        cout<<"NO HELLO WORLD AT THE MOMENT"<<endl;
+    }
+}
+___________________________________________________________________________________________________
+55.
+#include <iostream>
+
+using namespace std;
+int add(int x, int y);
+int sub(int x, int y);
+int Mutiply(int x, int y);
+void divid(int x, int y);
+int main()
+{
+int x,y;    
+cout<<"Pick any number that you want to be for X: "<<endl;
+cin>>x;
+cout<<"Pick any number that you want to be for Y: "<<endl;
+cin>>y;
+    cout<<add(x,y)<<endl;
+    cout<<sub(x,y)<<endl;
+    cout<<Mutiply(x,y)<<endl;
+    divid(x,y);
+    return 0;
+}
+int add(int num1, int num2)
+{
+    cout<<"The answer is going to be ADDING: "<<endl;
+    int num3=num1+num2;
+    return num3;
+}
+int sub(int num1, int num2)
+{
+    cout<<"The answer is going to be SUBTRACTING: "<<endl;
+    int num3=num1-num2;
+    return num3;
+}
+int Mutiply(int num1, int num2)
+{
+    cout<<"The answer is going to be Mutipling: "<<endl;
+    int num3=num1*num2;
+    return num3;
+}
+void divid(int num1, int num2)
+{
+    if (num2!=0)
+    {
+    cout<<"The answer is going to be dividing: "<<endl;
+    int num3=num1/num2;
+    cout<<num3;
+    }
+    else
+    {
+        cout<<"TRYING AGAIN"<<endl;
+        
+    }
+    
+}
+____________________________________________________________________________________________________
+56.
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    int rows, cols;
+    int grid [4][4]={1,0,0,0,0,1,0,0,0,0,1,0,0,0,0,1};
+    
+    for(int rows=0; rows<4; rows++)
+    {
+        for(int cols=0; cols<4; cols++)
+        cout<<grid[rows][cols];
+        cout<<endl;
+    }
+
+    return 0;
+}
+____________________________________________________________________________________________________
+57.
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    float grid[3][2]={10,20,30,40,50,60};
+    int row, col;
+    
+    for (row=0; row<3; row++)
+    {
+        for (col=0; col<2; col++)
+        {
+            cout<<"Grid ["<<row<<"]"<<" ["<<col<<"] = "<<grid[row][col]<<endl;
+        }
+    }
+
+    return 0;
+}
+____________________________________________________________________________________________________
+58.
+#include <iostream>
+
+using namespace std;
+
+int main()
+{   
+    int row, col, size;
+    cout<<"Please enter the size of the Matrix: ";
+    cin>>size;
+    
+    for (int i=0; i<size; i++)
+    {
+        for(int j=0; j<size; j++)
+        {
+            if(i==j)
+            {
+                cout<<"1";
+            }
+            else
+            cout<<"0";
+        }
+        cout<<endl;
+    }
+    return 0;
+}
+___________________________________________________________________________________________________
+59.
+#include <iostream>
+
+using namespace std;
+class box{
+    public:
+    double length;
+    double breadth;
+    double height;
+};
+
+int main()
+{
+    box Box1;
+    double volume=0.0;
+    Box1.height=5.0;
+    Box1.breadth=6.0;
+    Box1.length=7.0;
+    
+    box Box2;
+    Box2.height=7.0;
+    Box2.breadth=5.0;
+    Box2.length=9.0;
+    
+    volume=Box1.height*Box1.breadth* Box1.length;
+    cout<<"The volume for box one going to be: "<<volume<<" Inches cubed"<<endl;
+    
+    volume=Box2.height*Box2.breadth*Box2.length;
+    cout<<"The volume for box two going to be: "<<volume<<" Inches cubed";
+    
+    return 0;
+}
+____________________________________________________________________________________________________
+60.
+#include <iostream>
+
+using namespace std;
+class Box
+{
+    public:
+        double length; 
+        double breadth;
+        double height;
+        double volume;
+        void input()
+        {
+            cout<<"Enter the height of the box: "<<endl;
+            cin>>height;
+            cout<<"Enter the breadth of the box: "<<endl;
+            cin>>breadth;
+            cout<<"Enter the length of the box: "<<endl;
+            cin>>length;
+        }
+        void findvolume()
+        {
+            volume=height*breadth*length;
+        }
+        void display()
+        {
+            cout<<"The Volume is: "<<volume<<endl<<endl;
+        }
+};
+
+int main()
+{
+    Box Box1;
+    Box1.input();
+    Box1.findvolume();
+    Box1.display();
+    Box Box2;
+    Box2.input();
+    Box2.findvolume();
+    Box2.display();
+    return 0;
+}
+___________________________________________________________________________________________________
+61.
+#include <iostream>
+#include <cmath>
+#define PI 3.14159265
+using namespace std;
+class Sphere
+{
+    public:
+    double Radius, volume;
+    void input()
+    {
+        cout<<"Enter the radius for here: "<<endl;
+        cin>>Radius;
+    }
+    void findvolume()
+    {
+        volume=pow(Radius,3)*4/3*PI;
+    }
+    void display()
+    {
+        cout<<"Volume going to be: "<<volume<<endl<<endl;
+    }
+};
+int main()
+{
+    Sphere sphere1;
+    sphere1.input();
+    sphere1.findvolume();
+    sphere1.display();
+
+    return 0;
+}
+____________________________________________________________________________________________________
+62.
+#include <iostream>
+#include <cmath>
+
+using namespace std;
+class Resistors
+{
+    public:
+    double ResistorsA,ResistorsB, Rt_B1,Rt_A1;
+    void input()
+    {
+        cout<<"Enter the Resistors1 for here: "<<endl;
+        cin>>ResistorsA;
+        cout<<"Enter the Resistors2 for here: "<<endl;
+        cin>>ResistorsB;
+    }
+    void findseries()
+    {
+        Rt_A1=ResistorsA+ResistorsB;
+    }
+      void findparallel()
+    {
+       Rt_B1=1/(1/ResistorsA+1/ResistorsB);
+    }
+    void displayA()
+    {
+        cout<<"The total resistance for a series circuit is: "<<Rt_A1<<endl<<endl;
+    }
+    void displayB()
+    {
+        cout<<"The total resistance for a parallel circuit is: "<<Rt_B1<<endl<<endl;
+    }
+};
+int main()
+{
+    Resistors Resistors1;
+    Resistors1.input();
+    Resistors1.findseries();
+    Resistors1.displayA();
+   
+    Resistors Resistors2;
+    Resistors2.input();
+    Resistors2.findparallel();
+    Resistors2.displayB();
+
+    return 0;
+}
+___________________________________________________________________________________________________
+63.
+#include <iostream>
+#include <fstream>
+using namespace std;
+
+int main()
+{
+    ofstream Output;
+    Output.open("example.txt");
+    Output<<"This is our first to explore writting to a files";
+    Output.close();
+
+    return 0;
+}
+___________________________________________________________________________________________________
+64.
+#include <iostream>
+#include <fstream>
+using namespace std;
+
+int main()
+{
+    ofstream Output;
+    Output.open("example.txt");
+    
+    
+if (Output.is_open())
+{
+    Output<<"This is our first to explore writting to a files"<<endl;
+    Output<<"I enjoy writing to a files"<<endl;
+    Output.close();
+}
+else 
+cout<<"Unable to open the file";
+    return 0;
+}
+___________________________________________________________________________________________________
+65.
+#include <iostream>
+#include <fstream>
+using namespace std;
+
+int main()
+{
+    string testtext;
+    ifstream readfile("example.txt");
+    while (getline (readfile,testtext))
+    {
+        cout<<endl;
+        cout<<testtext;
+    }
+
+    return 0;
+}
+____________________________________________________________________________________________________
+66.
+#include <iostream>
+#include <fstream>
+#include <string>
+using namespace std;
+
+int main()
+{
+    ifstream input;
+    ofstream output;
+    input.open("WeatherSummary.txt");
+    output.open("Report.txt");
+    string date,station;
+    int high,low;
+    float humidity, rain;
+    getline(input,date);
+    getline(input,station);
+    input>>high;
+    input>>low;
+    input>>humidity;
+    input>>rain;
+    
+    output<<"Date: "<<date<<endl;
+    output<<"Station: "<<station<<endl;
+    
+    if (rain ==0.0)
+        output<<" No Rain"<<endl;
+        
+    else
+        output<<"It rained today."<<endl;
+        
+    int range = high-low;
+    output<<"The temperature range was "<<range<<" degrees." <<endl;
+    
+    if (humidity<0.33)
+        output<<"It's Dry today "<<endl;
+        
+    else if (humidity <0.66)
+        output<<"It's Nice today "<<endl;
+        
+    else
+        output<<"It's Muggy "<<endl;
+        
+        input.close();
+        output.close();
+____________________________________________________________________________________________________
+67.
+#include <iostream>
+#include <fstream>
+using namespace std;
+
+int main()
+{
+    string testtext;
+    ifstream readfile("example.txt");
+    while (getline (readfile,testtext))
+    {
+        cout<<endl;
+        cout<<testtext;
+    }
+
+    return 0;
+}
+____________________________________________________________________________________________________
+68.
+#include <iostream>
+#include <fstream> 
+#include <cmath>
+using namespace std;
+
+int main()
+{
+    ifstream input;
+    ofstream output; 
+
+    input.open("Values for Resistors.txt");
+    output.open("Total Resistance.txt");
+
+    float Resistors1, Resistors2, Resistors3, Resistors4;
+    input>>Resistors1;
+    input>>Resistors2;
+    input>>Resistors3;
+    input>>Resistors4;
+
+    float Rt_A1=Resistors1+Resistors2+Resistors3+Resistors4;
+    output<<"The total resistance for a series circuit going to be: "<<Rt_A1<<endl;
+
+    float Rt_B=(1/Resistors1)+ (1/Resistors2)+(1/Resistors3)+ (1/Resistors4);
+    float Rt_B1=pow(Rt_B,-1);
+    output<<"The total resistance for a parallel circuit going to be: "<<Rt_B1<<endl;
+
+    input.close();
+    output.close();
+
+    return 0;
+}
+___________________________________________________________________________________________________
+69.
+#include <iostream>
+
+using namespace std;
+
+double GRADESAverage(double GRADES[], int numGRADES) {
+    double TOTAL = 0;
+    for (int i = 0; i < numGRADES; ++i) {
+        TOTAL += GRADES[i];
+    }
+    return TOTAL / numGRADES;
+}
+
+int main() {
+    int N;
+    cout << "Please enter number of grades that : ";
+    cin >> N;
+    cout << "Enter Here " << N << " grades: "<<endl;
+    double *GRADES = new double[N];
+    for (int i = 0; i < N; ++i) {
+        cin >> GRADES[i];
+    }
+    cout << "Grade average going to be " << GRADESAverage(GRADES, N) << endl;
+    delete[] GRADES;
+    return 0;
+}
+____________________________________________________________________________________________________
+70.
+#include <iostream>
+
+using namespace std;
+
+int main() {
+        int B;
+
+        cout<<"Please enter any number of characters in an array: ";
+        cin>>B;
+
+        char array[B+1];
+
+        cout<<"Please enter any word for character array: ";
+        cin>>array;
+
+        cout<<"The word you put in the reverse going to be: ";
+        for(int i = B-1;i>=0;i--){
+                cout<<array[i];
+        }
+
+        return 0;
+}
+____________________________________________________________________________________________________
+71.
+#include <iostream>
+#include<cmath>
+using namespace std;
+
+#define PI 3.14159265
+
+class CYLINDER
+{
+    public:
+        double RADIUS; 
+        double HEIGHT;
+        double VOLUME;
+        void input()
+        {
+            cout<<"Please enter the height for the cylinder: "<<endl;
+            cin>>HEIGHT;
+            cout<<"Please enter the radius for the cylinder: "<<endl;
+            cin>>RADIUS;
+        }
+        void findvolume()
+        {
+           VOLUME=HEIGHT*PI*pow(RADIUS,2);
+        }
+        void display()
+        {
+            cout.setf(ios::showpoint | ios::fixed);
+            cout.precision(2);
+            cout<<"The Volume going to be: "<<VOLUME<<endl<<endl;
+        }
+};
+
+int main()
+{
+    CYLINDER CYLINDER1;
+    CYLINDER1.input();
+    CYLINDER1.findvolume();
+    CYLINDER1.display();
+
+    CYLINDER CYLINDER2;
+    CYLINDER2.input();
+    CYLINDER2.findvolume();
+    CYLINDER2.display();
+    return 0;
+}
+_________________________________________________________________________________________________
+72.
+#include <iostream>
+#include <cstring> 
+#include <string>  
+#include <fstream> 
+using namespace std;
+
+int main() 
+{
+    fstream inputFile;
+    fstream outputFile;
+    inputFile.open("studentgrades.txt", ios::in);
+    outputFile.open("Grades.txt", ios::out);
+    if(!inputFile || !outputFile) {
+        return 0;
+    }
+    string line;
+    string names[100];
+    float grades[100];
+    int lineCounter = 0;
+    while (getline(inputFile, line, '\n')) {
+        int n = line.length();
+        char char_array[n + 1];
+        strcpy(char_array, line.c_str());
+        string expectedLine;
+        char lastChar = ' ';
+        for (int i = 0; i < n; i++) {
+            char thisChar = char_array[i];
+
+            if(thisChar != ' ' || (lastChar != ' ' and thisChar == ' ')) {
+                expectedLine = expectedLine + thisChar;
+                lastChar = thisChar;
+            }
+            
+        }
+
+        size_t pos = 0;
+        string word;
+        string name = "";
+        float totalgrade = 0;
+        int wordCount = 0;
+
+        while (true) {
+ 
+            pos = expectedLine.find(' ');
+
+            word = expectedLine.substr(0, pos);
+
+            expectedLine.erase(0, pos + 1);
+            if (wordCount ==0) 
+            {
+                name = name +word;
+           
+            } 
+            else if (wordCount ==1)
+            {
+                name = name + " "+word;
+            } 
+            else 
+            {
+                //totalgrade += stoi(word);
+                
+            }
+            wordCount++;
+            if(pos == string::npos) 
+            {
+                break;
+            }
+        }
+        names[lineCounter] = name;
+        grades[lineCounter] = totalgrade/ (wordCount-2);
+        lineCounter++;
+    }
+    inputFile.close();
+
+
+    outputFile << endl;
+    outputFile << "  The C++ Grading Program  " << endl;
+    outputFile << endl;
+    char buffer[100];
+        sprintf(buffer, "%-20s %-20s\n", "Student Name", "Average Grade");
+        outputFile << buffer;
+        for(int i = 0; i < lineCounter; i++) {
+                string name = names[i];
+                float grade = grades[i];
+                sprintf(buffer, "%-23s %-20.3f\n", name.c_str(), grade);
+                outputFile << buffer; 
+        } 
+    outputFile << endl;
+    outputFile << " All Done!";           
+    outputFile << endl;
+    outputFile.close();
+}
+___________________________________________________________________________________________________
+73.
+#include <iostream>
+#include <fstream>
+#include <iomanip>
+using namespace std;
+
+
+float FindAve(float grades[], int total);
+
+int main ()
+
+{
+    ifstream input;
+    ofstream output;
+
+    input.open("StudentGrades.txt");
+    output.open("Grades.txt");
+
+    int totalGrades=8;
+    float grade [8];
+    char name[25];
+    float sum=0, average;
+
+    if (!input)
+        {
+    cout << "File did not open correctly"<< endl;
+    return 0;
+        }
+    output<<"The C++ Grading Program"<<endl;
+    output<<"Student Name           Average Grade \n";
+
+    output.precision(3);
+    output.setf(ios::fixed);
+
+    while (input)
+        {
+
+    input.get(name,25);
+    for (int x=0; x<8; ++x)
+
+        {
+
+        input>>grade[x];
+        }
+
+    input.ignore();
+
+        average = FindAve (grade,totalGrades);
+
+        output<<name<<setw(8)<<average<<endl;
+        }
+    output<<"All Done!";
+
+    input.close();
+    output.close();
+
+    return 0;
+}
+
+
+float FindAve(float grades[],int totalGrades)
+{
+    float sum = 0.0;
+    int x;
+    for(x = 0; x<totalGrades; ++x)
+    {
+        sum = sum + grades[x];
+    }
+    return (sum/totalGrades);
+}
+____________________________________________________________________________________________________
+74.
+#include <iostream>
+using namespace std;
+
+int main() 
+{
+    int arr[5];
+    cout<<"Please enter 5 integers input: "<<endl;
+    for(int x=0;x<=4;++x)
+    {
+        cin>>arr[x];
+    }
+
+    cout<<"Integers in the reverse order:\n";
+    for(int x = 4;x>=0;--x)
+        {
+            cout<<arr[x];
+            cout<<endl;
+        }
+        return 0;
+}
+___________________________________________________________________________________________________
+75.
+#include<iostream>
+#include<cmath>
+using namespace std;
+
+#define PI 3.14159265
+
+class sphere
+{
+    public:
+        float RAD, VOL; 
+         void findvol()
+        {
+        VOL=pow(RAD,3)*4/3*PI;
+        }
+        void input()
+        {
+            cout<<"Please enter the radius of the sphere: "<<endl;
+            cin>>RAD;
+        }
+       
+        void display()
+        {
+            cout.setf(ios::showpoint | ios::fixed);
+            cout.precision(3);
+            cout<<"The Volume is: "<<VOL<<endl<<endl;
+        }
+};
+
+int main()
+{
+    sphere SphereA;
+    SphereA.input();
+    SphereA.findvol();
+    SphereA.display();
+
+    sphere SphereB;
+    SphereB.input();
+    SphereB.findvol();
+    SphereB.display();
+    return 0;
+}
+____________________________________________________________________________________________________
+76.
+#include <iostream>
+#include <fstream>
+
+using namespace std;
+
+int main ()
+{
+    string FindResistor;
+    ifstream readfile("FindResistor.txt");
+    while (getline (readfile,FindResistor))
+    {
+        cout<<FindResistor<<endl;
+    }
+}
+____________________________________________________________________________________________________
+77.
+#include<iostream>
+using namespace std;
+
+int main()
+{
+   int arr[10];
+   cout<<"\nEnter the values of array\n"; 
+   for(int i=0;i<10;i++)
+   {
+       cout<<"Please enter an integer : ";
+       cin>>arr[i];
+    
+   }
+
+   cout<<"\nThe values in the original array are : \n";
+   for(int i =0;i<10;i++)
+   cout<<arr[i]<<" ";
+
+   
+   for(int i=0,j=9;i<j;i++,j--)
+   {
+       int t=arr[i];
+       arr[i]=arr[j];
+       arr[j]=t;
+   }
+
+   cout<<"\nThe values in the Reverse array are : \n";
+   for(int i =0;i<10;i++)
+   cout<<arr[i]<<" ";
+
+   return 0;
+}
+____________________________________________________________________________________________________
+78.
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+  
+   int i=0;
+   unsigned long n,sum=0;
+  
+   
+   cout<<"Enter value of n : ";
+   cin>>n;
+  
+
+   while(++i<=n )
+       sum = sum + i*i;
+
+
+   cout<<"\nSum of square of integers from 1 to "<<n<<" = "<<sum;
+  
+return 0;
+}
+____________________________________________________________________________________________________
+79.
+#include <iostream>
+
+using namespace std;
+
+
+int main()
+{
+  
+   int n,sum=0;
+  
+
+   cout<<"Enter value of n : ";
+   cin>>n;
+  
+
+   for(int i= 1; i<=n; i++)
+       sum = sum + i*i;
+
+
+   cout<<"\nSum of square of integers from 1 to "<<n<<" = "<<sum;
+  
+return 0;
+}
+____________________________________________________________________________________________________
+80.
+#include <iostream>
+
+using namespace std;
+
+
+int main()
+{
+  
+   int n,sum=0;
+  
+   cout<<"Enter value of n : ";
+   cin>>n;
+  
+   for(int i= 1; i<=n; i++)
+       sum = sum + i*i;
+
+
+   cout<<"\nSum of square of integers from 1 to "<<n<<" = "<<sum;
+  
+return 0;
+}
+81.
+#include <iostream>
+using namespace std;
+#include "Function.A"
+
+int main()
+{
+    int x=40, y=32;
+    cout<<"the two Function going to be when Multpily =  "<<Multpily(x,y)<<endl;
+    cout<<"the two Function going to be when adding together = "<<Adding(x,y)<<endl;
+    cout<<"the two Function going to be when Subtract together = "<<Subtract(x,y)<<endl;
+    return 0;
+}
+IN file 
+int Multpily(int x, int y)
+{
+    return(x*y);
+};
+
+int Adding(int x, int y)
+{
+    return(x+y);
+};
+
+int Subtract(int x, int y)
+{
+    return(x-y);
+};
